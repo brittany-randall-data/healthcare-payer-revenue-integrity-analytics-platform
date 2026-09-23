@@ -1,0 +1,13 @@
+provider_id,location_id,location_name,city,state,zip_code,location_status
+P001,L001,Hudson Family Health,Albany,NY,12207,Active
+P002,L002,Capital Internal Medicine,Troy,NY,12180,Active
+P003,L001,Hudson Family Health,Albany,NY,12207,Active
+P004,L003,River Valley Specialty Center,Schenectady,NY,12305,Active
+P005,L002,Capital Internal Medicine,Troy,NY,12180,Active
+P006,L004,Northside Pediatric Center,Saratoga Springs,NY,12866,Active
+P007,L001,Hudson Family Health,Albany,NY,12207,Active
+P008,L002,Capital Internal Medicine,Troy,NY,12180,Inactive
+P009,L005,Community Primary Care,Kingston,NY,12401,Active
+P010,L006,Hudson Infectious Disease Center,Poughkeepsie,NY,12601,Active
+P011,L004,Northside Pediatric Center,Saratoga Springs,NY,12866,Active
+P012,L002,Capital Internal Medicine,Troy,NY,12180,Inactive
