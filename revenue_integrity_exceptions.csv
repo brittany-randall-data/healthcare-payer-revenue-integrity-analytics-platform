@@ -1,0 +1,7 @@
+provider_id,provider_name,payer_name,line_of_business,specialty,payer_specialty,active_status,location_status,enrollment_status,panel_status,exception_type,issue_count,denied_claim_count,denied_billed_amount,potential_revenue_at_risk
+P004,Daniel Brooks MD,HealthFirst Plus,Medicaid,Infectious Disease,Internal Medicine,Active,Active,Active,Open,SPECIALTY_MISMATCH,1,2,1385.0,1385.0
+P012,Kevin Thompson DO,MetroCare Health,Medicaid,Internal Medicine,Internal Medicine,Inactive,Inactive,Active,Open,INACTIVE_LOCATION | INACTIVE_PROVIDER_ACTIVE_ENROLLMENT,2,2,1215.0,1215.0
+P009,Sophia Patel NP,Empire Community Plan,Medicaid,Family Medicine,Internal Medicine,Active,Active,Active,Open,SPECIALTY_MISMATCH,1,2,950.0,950.0
+P005,Monica Reyes NP,MetroCare Health,Medicaid,Adult Health,Adult Health,Active,Active,Pending,Open,PENDING_ENROLLMENT,1,2,945.0,945.0
+P008,Marcus Hill MD,MetroCare Health,Medicaid,Internal Medicine,Internal Medicine,Active,Inactive,Terminated,Open,TERMINATED_ENROLLMENT | INACTIVE_LOCATION,2,1,610.0,610.0
+P007,Nicole Bennett DO,HealthFirst Plus,Medicaid,Family Medicine,Family Medicine,Active,Active,Active,Closed,CLOSED_PANEL,1,1,525.0,525.0
