@@ -1,0 +1,13 @@
+provider_id,npi,provider_name,specialty,taxonomy_code,provider_type,active_status
+P001,1003000001,Maya Carter MD,Family Medicine,207Q00000X,Physician,Active
+P002,1003000002,Jordan Lee DO,Internal Medicine,207R00000X,Physician,Active
+P003,1003000003,Alicia Morgan NP,Family Medicine,363LF0000X,Nurse Practitioner,Active
+P004,1003000004,Daniel Brooks MD,Infectious Disease,207RI0200X,Physician,Active
+P005,1003000005,Monica Reyes NP,Adult Health,363LA2200X,Nurse Practitioner,Active
+P006,1003000006,Christopher Allen MD,Pediatrics,208000000X,Physician,Active
+P007,1003000007,Nicole Bennett DO,Family Medicine,207Q00000X,Physician,Active
+P008,1003000008,Marcus Hill MD,Internal Medicine,207R00000X,Physician,Active
+P009,1003000009,Sophia Patel NP,Family Medicine,363LF0000X,Nurse Practitioner,Active
+P010,1003000010,Anthony Rivera MD,Infectious Disease,207RI0200X,Physician,Active
+P011,1003000011,Rachel Kim MD,Pediatrics,208000000X,Physician,Active
+P012,1003000012,Kevin Thompson DO,Internal Medicine,207R00000X,Physician,Inactive
