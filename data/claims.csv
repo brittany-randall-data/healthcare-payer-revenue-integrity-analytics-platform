@@ -1,0 +1,19 @@
+claim_id,provider_id,payer_name,line_of_business,service_date,billed_amount,paid_amount,claim_status,denial_reason
+C001,P001,HealthFirst Plus,Medicaid,2026-08-05,425.00,365.00,Paid,
+C002,P002,HealthFirst Plus,Medicaid,2026-08-07,510.00,445.00,Paid,
+C003,P003,MetroCare Health,Medicaid,2026-08-10,390.00,340.00,Paid,
+C004,P004,HealthFirst Plus,Medicaid,2026-08-12,675.00,0.00,Denied,Provider specialty mismatch
+C005,P005,MetroCare Health,Medicaid,2026-08-15,480.00,0.00,Denied,Provider enrollment incomplete
+C006,P006,Empire Community Plan,CHIP,2026-08-18,350.00,310.00,Paid,
+C007,P007,HealthFirst Plus,Medicaid,2026-08-20,525.00,0.00,Denied,Provider panel configuration
+C008,P008,MetroCare Health,Medicaid,2026-08-22,610.00,0.00,Denied,Provider enrollment terminated
+C009,P009,Empire Community Plan,Medicaid,2026-08-24,455.00,0.00,Denied,Provider specialty mismatch
+C010,P010,HealthFirst Plus,Medicaid,2026-08-25,720.00,650.00,Paid,
+C011,P011,Empire Community Plan,CHIP,2026-08-27,375.00,330.00,Paid,
+C012,P012,MetroCare Health,Medicaid,2026-08-29,590.00,0.00,Denied,Provider status discrepancy
+C013,P004,HealthFirst Plus,Medicaid,2026-09-02,710.00,0.00,Denied,Provider specialty mismatch
+C014,P005,MetroCare Health,Medicaid,2026-09-04,465.00,0.00,Denied,Provider enrollment incomplete
+C015,P009,Empire Community Plan,Medicaid,2026-09-06,495.00,0.00,Denied,Provider specialty mismatch
+C016,P010,HealthFirst Plus,Medicaid,2026-09-08,760.00,690.00,Paid,
+C017,P001,HealthFirst Plus,Medicaid,2026-09-10,440.00,380.00,Paid,
+C018,P012,MetroCare Health,Medicaid,2026-09-12,625.00,0.00,Denied,Provider status discrepancy
