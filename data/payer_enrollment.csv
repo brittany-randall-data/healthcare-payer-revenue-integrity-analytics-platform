@@ -1,0 +1,13 @@
+enrollment_id,provider_id,payer_name,line_of_business,enrollment_status,effective_date,termination_date,panel_status,payer_specialty,payer_location_id
+E001,P001,HealthFirst Plus,Medicaid,Active,2025-01-01,,Open,Family Medicine,L001
+E002,P002,HealthFirst Plus,Medicaid,Active,2025-02-01,,Open,Internal Medicine,L002
+E003,P003,MetroCare Health,Medicaid,Active,2025-01-15,,Open,Family Medicine,L001
+E004,P004,HealthFirst Plus,Medicaid,Active,2025-03-01,,Open,Internal Medicine,L003
+E005,P005,MetroCare Health,Medicaid,Pending,2026-07-01,,Open,Adult Health,L002
+E006,P006,Empire Community Plan,CHIP,Active,2025-01-01,,Open,Pediatrics,L004
+E007,P007,HealthFirst Plus,Medicaid,Active,2025-04-01,,Closed,Family Medicine,L001
+E008,P008,MetroCare Health,Medicaid,Terminated,2024-01-01,2026-05-31,Open,Internal Medicine,L002
+E009,P009,Empire Community Plan,Medicaid,Active,2025-06-01,,Open,Internal Medicine,L005
+E010,P010,HealthFirst Plus,Medicaid,Active,2025-01-01,,Open,Infectious Disease,L006
+E011,P011,Empire Community Plan,CHIP,Active,2025-02-01,,Open,Pediatrics,L004
+E012,P012,MetroCare Health,Medicaid,Active,2025-01-01,,Open,Internal Medicine,L002
