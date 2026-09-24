@@ -1,82 +1,146 @@
-## Project Status
+# Healthcare Payer Revenue Integrity Analytics Platform
 
-🚧 **In Development**
+An independent healthcare analytics engineering portfolio project designed to identify payer and provider configuration discrepancies that may contribute to reimbursement risk and preventable claim denials.
 
-### Completed
+## Business Problem
 
-- Designed a synthetic relational healthcare dataset spanning provider master, location, payer enrollment, and claims data.
-- Built a Python data-validation pipeline to verify required fields, duplicate keys, referential integrity, and claim financial logic.
-- Built a cross-source revenue integrity analysis pipeline that reconciles provider, location, payer enrollment, specialty, panel, and claims information.
-- Implemented automated business rules to detect specialty mismatches, pending or terminated enrollment, closed panels, inactive locations, and provider-status inconsistencies.
-- Linked provider configuration exceptions to denied claims and generated a prioritized exception report.
-- Identified 10 synthetic denied claims associated with configuration exceptions, representing $5,630 in synthetic billed charges potentially at risk.
+Healthcare organizations maintain provider, payer enrollment, location, and claims information across multiple systems. When those systems disagree, configuration issues such as specialty mismatches, incomplete enrollment, terminated participation, closed panels, inactive locations, or provider-status discrepancies can create reimbursement and operational risk.
 
-### Current Analytical Results
+This project demonstrates how those data sources can be integrated and systematically analyzed using a modern analytics engineering workflow.
 
-The initial synthetic dataset produced six provider-level exception records associated with 10 denied claims.
+## Business Question
 
-| Exception Category | Example Risk |
-| --- | --- |
-| Specialty mismatch | Provider specialty differs from payer configuration |
-| Pending enrollment | Claims occur before payer enrollment is active |
-| Terminated enrollment | Claims associated with terminated payer participation |
-| Closed panel | Provider configuration may prevent appropriate member assignment |
-| Inactive location | Enrollment or claims activity associated with an inactive practice location |
-| Provider-status inconsistency | Active payer enrollment associated with an inactive provider record |
+Can provider, payer, claims, and enrollment data be integrated to identify reimbursement risk, provider-configuration anomalies, and potentially preventable payment failures before they become larger revenue-cycle problems?
 
-> **Note:** All results are generated from synthetic data. The $5,630 figure represents synthetic billed charges associated with detected exceptions and does not represent actual recovered revenue.
+## Project Architecture
 
-### Next Phase
+Synthetic Healthcare Data  
+→ Python Validation & Exception Analysis  
+→ Snowflake RAW Data Warehouse  
+→ SQL Reconciliation & Analytics Views  
+→ dbt Transformation & Data Quality Testing  
+→ Revenue Integrity Analysis
 
-- Implement analytical warehouse structures in Snowflake.
-- Recreate core reconciliation logic using SQL.
-- Build dbt transformation models and automated data-quality tests.
-- Develop analytical models for provider participation gaps and revenue-integrity monitoring.
-- Create executive-facing visualizations and recommendations.
+## Technology Stack
 
+- Python
+- pandas
+- SQL
+- Snowflake
+- dbt
+- Git / GitLab
 
+## Data
 
-## Snowflake Analytics Warehouse
+The project uses entirely synthetic healthcare data created specifically for portfolio demonstration.
 
-The project includes a Snowflake analytics warehouse that integrates synthetic provider, payer enrollment, provider location, and claims data.
+The relational dataset includes:
 
-### RAW Layer
+- Provider master data
+- Provider locations
+- Payer enrollment and participation data
+- Claims and reimbursement data
 
-Four source datasets are loaded into the `RAW` schema:
+No patient information, PHI, employer data, or proprietary healthcare organization data is used.
 
-- `PROVIDERS`
-- `PROVIDER_LOCATIONS`
-- `PAYER_ENROLLMENT`
-- `CLAIMS`
+## Python Validation and Exception Analysis
 
-The raw layer preserves the source-level healthcare data used for reconciliation and downstream analysis.
+Python validation scripts were developed to:
 
-### Revenue Integrity Analytics
+- Validate required columns and source structure
+- Detect duplicate records
+- Validate referential integrity across datasets
+- Identify invalid financial values
+- Reconcile provider, payer enrollment, and location information
+- Flag provider-configuration exceptions
+- Associate configuration exceptions with denied claims
 
-SQL transformations reconcile provider master data with payer enrollment and location configuration to identify potential revenue-integrity exceptions, including:
+## Snowflake Data Warehouse
 
-- Specialty mismatches
-- Pending payer enrollment
-- Terminated payer enrollment
-- Closed provider panels
-- Inactive practice locations
-- Active payer enrollment for inactive providers
+A Snowflake warehouse was implemented with separate RAW and ANALYTICS layers.
 
-The resulting provider-level exceptions are joined to synthetic claims data to evaluate denied claims associated with configuration discrepancies.
+The RAW layer contains:
 
-### Validated Snowflake Results
+- PROVIDERS
+- PROVIDER_LOCATIONS
+- PAYER_ENROLLMENT
+- CLAIMS
 
-The current synthetic dataset produces:
+Reusable SQL analytics views reconcile provider master, payer enrollment, provider location, and claims data to identify configuration discrepancies and quantify associated denied billed charges.
+
+## dbt Transformation and Testing
+
+A dbt project was implemented and connected directly to Snowflake.
+
+Staging models were created for:
+
+- Providers
+- Provider locations
+- Payer enrollment
+- Claims
+
+Automated dbt data-quality tests validate:
+
+- Required values
+- Provider identifiers
+- NPI identifiers
+- Expected provider status values
+- Expected enrollment status values
+- Expected location status values
+- Expected claim status values
+
+The completed dbt pipeline successfully executed **4 Snowflake view models and 20 automated data tests with 24/24 passing and zero errors**.
+
+## Revenue Integrity Findings
+
+The synthetic analysis identified:
 
 - **6 provider-level configuration exceptions**
 - **10 denied claims associated with those exceptions**
 - **$5,630 in synthetic billed charges potentially at risk**
 
-The $5,630 represents synthetic billed charges associated with denied claims and identified configuration exceptions. It does not represent recovered revenue or guaranteed recoverable revenue.
+Detected exception categories include:
 
-### Snowflake SQL
+- Specialty mismatch
+- Pending enrollment
+- Terminated enrollment
+- Closed payer panel
+- Inactive provider location
+- Inactive provider with active payer enrollment
 
-Reproducible Snowflake SQL is available in the [`sql/`](sql/) directory:
+The $5,630 represents synthetic billed charges associated with identified configuration exceptions. It does not represent recovered revenue or guaranteed recoverable revenue.
 
-- `01_create_raw_layer.sql` — database, schema, and source-table definitions
-- `02_revenue_integrity_analytics.sql` — cross-source reconciliation, exception detection, claims aggregation, and validation queries
+## Repository Structure
+
+- `data/` — synthetic source datasets
+- `src/` — Python validation and revenue-integrity analysis
+- `sql/` — Snowflake warehouse and analytics SQL
+- `dbt/` — dbt transformation models, source definitions, and automated data-quality tests
+- `outputs/` — generated revenue-integrity exception analysis
+- `docs/` — project documentation and data model
+
+## Project Status
+
+### Completed
+
+- Synthetic relational healthcare dataset
+- Python validation pipeline
+- Revenue-integrity exception analysis
+- Snowflake RAW warehouse
+- Snowflake SQL reconciliation
+- Reusable Snowflake analytics views
+- dbt staging transformation layer
+- Automated dbt data-quality testing
+- Git/GitLab version control
+
+### Future Enhancements
+
+- Executive visualization/dashboard
+- Exception severity and prioritization framework
+- Expanded payer-location reconciliation rules
+- Additional analytical models
+
+## Author
+
+**Brittany Randall**  
+M.S. Data Analytics – Decision Process Engineering
