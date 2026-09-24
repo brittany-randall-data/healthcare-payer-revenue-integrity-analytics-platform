@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: stg_providers
+    description: "Staged synthetic provider master data used for revenue integrity analysis."
+
+    columns:
+      - name: provider_id
+        description: "Unique synthetic identifier for each provider."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: npi
+        description: "Synthetic NPI-shaped identifier used only for portfolio demonstration."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: provider_name
+        description: "Synthetic provider name."
+        data_tests:
+          - not_null
+
+      - name: active_status
+        description: "Provider master status."
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Active', 'Inactive']

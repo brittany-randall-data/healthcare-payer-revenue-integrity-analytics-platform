@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: raw
+    database: HEALTHCARE_REVENUE_INTEGRITY
+    schema: RAW
+    description: "Synthetic healthcare source data used for payer revenue integrity analysis."
+
+    tables:
+      - name: providers
+        identifier: PROVIDERS
+        description: "Synthetic provider master data."
+
+      - name: provider_locations
+        identifier: PROVIDER_LOCATIONS
+        description: "Synthetic provider practice location data."
+
+      - name: payer_enrollment
+        identifier: PAYER_ENROLLMENT
+        description: "Synthetic payer enrollment and provider configuration data."
+
+      - name: claims
+        identifier: CLAIMS
+        description: "Synthetic claims and reimbursement data."

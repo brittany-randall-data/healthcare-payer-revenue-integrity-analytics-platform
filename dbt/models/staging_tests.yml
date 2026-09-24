@@ -1,0 +1,63 @@
+version: 2
+
+models:
+  - name: stg_payer_enrollment
+    description: "Staged synthetic payer enrollment and provider configuration data."
+    columns:
+      - name: enrollment_id
+        data_tests:
+          - not_null
+          
+
+      - name: provider_id
+        data_tests:
+          - not_null
+
+      - name: enrollment_status
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Active', 'Pending', 'Terminated']
+
+  - name: stg_provider_locations
+    description: "Staged synthetic provider practice location data."
+    columns:
+      - name: location_id
+        data_tests:
+          - not_null
+         
+
+      - name: provider_id
+        data_tests:
+          - not_null
+
+      - name: location_status
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Active', 'Inactive']
+
+  - name: stg_claims
+    description: "Staged synthetic claims and reimbursement data."
+    columns:
+      - name: claim_id
+        data_tests:
+          - not_null
+         
+
+      - name: provider_id
+        data_tests:
+          - not_null
+
+      - name: billed_amount
+        data_tests:
+          - not_null
+
+      - name: claim_status
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Paid', 'Denied']
