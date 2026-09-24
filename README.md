@@ -33,3 +33,50 @@ The initial synthetic dataset produced six provider-level exception records asso
 - Build dbt transformation models and automated data-quality tests.
 - Develop analytical models for provider participation gaps and revenue-integrity monitoring.
 - Create executive-facing visualizations and recommendations.
+
+
+
+## Snowflake Analytics Warehouse
+
+The project includes a Snowflake analytics warehouse that integrates synthetic provider, payer enrollment, provider location, and claims data.
+
+### RAW Layer
+
+Four source datasets are loaded into the `RAW` schema:
+
+- `PROVIDERS`
+- `PROVIDER_LOCATIONS`
+- `PAYER_ENROLLMENT`
+- `CLAIMS`
+
+The raw layer preserves the source-level healthcare data used for reconciliation and downstream analysis.
+
+### Revenue Integrity Analytics
+
+SQL transformations reconcile provider master data with payer enrollment and location configuration to identify potential revenue-integrity exceptions, including:
+
+- Specialty mismatches
+- Pending payer enrollment
+- Terminated payer enrollment
+- Closed provider panels
+- Inactive practice locations
+- Active payer enrollment for inactive providers
+
+The resulting provider-level exceptions are joined to synthetic claims data to evaluate denied claims associated with configuration discrepancies.
+
+### Validated Snowflake Results
+
+The current synthetic dataset produces:
+
+- **6 provider-level configuration exceptions**
+- **10 denied claims associated with those exceptions**
+- **$5,630 in synthetic billed charges potentially at risk**
+
+The $5,630 represents synthetic billed charges associated with denied claims and identified configuration exceptions. It does not represent recovered revenue or guaranteed recoverable revenue.
+
+### Snowflake SQL
+
+Reproducible Snowflake SQL is available in the [`sql/`](sql/) directory:
+
+- `01_create_raw_layer.sql` — database, schema, and source-table definitions
+- `02_revenue_integrity_analytics.sql` — cross-source reconciliation, exception detection, claims aggregation, and validation queries
